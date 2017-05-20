@@ -8,16 +8,13 @@
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        #map { position:absolute; top:0; bottom:0; width:50%; }
     </style>
 </head>
 <body>
 
 <style>
-#map {
-    position: fixed;
-    width:50%;
-}
+
 #features {
     width: 50%;
     margin-left: 50%;
@@ -44,12 +41,16 @@ section:last-child {
 <div id='map'></div>
 <div id='features'>
     <section id='losangeles' class='active'>
-        <h3>Welcome to Los Angeles</h3>
+        <h3>Welcome to Los Angeles This is MAP TIME LA</h3>
         <p>This is Los Angeles</p>
     </section>
     <section id='boyleheights'>
         <h3>The neighborhood of Boyle Heights</h3>
         <p>Let's head down to the nieghborhood of Boyle Heights</p>
+    </section>
+     <section id='random'>
+        <h3>The neighborhood of Random</h3>
+        <p>Let's head down to the nieghborhood of Random</p>
     </section>
     <section id='centralave'>
         <h3>Down Central Ave</h3>
@@ -83,6 +84,7 @@ var map = L.map('map').setView([34.0622, -118.2680], 13);
 L.tileLayer('http://d.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
     attribution: '<a target="_top" href="http://stamen.com">Stamen Design, under CC BY 3.0, data by OSM</a>'
 }).addTo(map);
+    //You can copy this code and add another layer, but this layer will be on top/*
 
 //This function adds a tile layer from remote sources like the David Rumsey Map Collection, remove the "/*" at the beginning and "*/" at the end to activate.
 /*    
@@ -105,6 +107,10 @@ var chapters = {
     'boyleheights': {
         center: [34.0323, -118.2120],
         zoom: 13,
+    },
+    'random': {
+       center: [34.05237497000485, -118.31246495246889],
+       zoom: 16
     },
     'centralave': {
         center: [34.00672273556911, -118.25617347611393],
